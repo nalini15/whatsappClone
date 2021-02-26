@@ -10,19 +10,10 @@ class FadeNavigation extends PageRouteBuilder {
                 Animation<double> secAnimation, Widget child) {
               animation =
                   CurvedAnimation(parent: animation, curve: Curves.easeInOut);
-              // return ScaleTransition(
-              //   scale: animation,
-              //   alignment: Alignment.center,
-              //   child: child,
-              // );
+
               return FadeTransition(
                 opacity: animation,
                 alwaysIncludeSemantics: true,
-
-                // position: Tween<Offset>(
-                //         begin: const Offset(10.0, 10.0), end: Offset.zero)
-                //     .animate(animation),
-                // textDirection: TextDirection.ltr,
                 child: child,
               );
             },

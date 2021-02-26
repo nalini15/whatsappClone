@@ -1,16 +1,17 @@
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:shared_preferences/shared_preferences.dart';
+import 'package:provider/provider.dart';
 import 'package:wclone/NavigationAnimation/navigators.dart';
-import 'package:wclone/screens/callScreen.dart';
+import 'package:wclone/provider/appState.dart';
+import 'package:wclone/screens/callScreen/callScreen.dart';
 import 'package:wclone/screens/camera/cameraScreen.dart';
 
 import 'package:wclone/screens/chat/chatScreen.dart';
+import 'package:wclone/screens/popupMenu/settings.dart';
 import 'package:wclone/screens/statusScreen.dart';
 import 'package:wclone/styles/colors.dart';
 import 'package:wclone/widgets/search.dart';
-import '../popupMenu/settings.dart';
 
 class WhatsAppHome extends StatefulWidget {
   final List<CameraDescription> cameras;
@@ -20,19 +21,10 @@ class WhatsAppHome extends StatefulWidget {
   _WhatsAppHomeState createState() => _WhatsAppHomeState();
 }
 
-enum Themes { light, dark }
-
 class _WhatsAppHomeState extends State<WhatsAppHome>
     with SingleTickerProviderStateMixin {
-  ValueNotifier<Themes> _selectedItem = new ValueNotifier<Themes>(Themes.dark);
   TabController _tabController;
   bool showFab = true;
-
-  getSelectedValue() async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    int radioValue = prefs.getInt('radio.value');
-//  check if radioValue is null - no button is pressed yet, otherwise you will have selected radio value here.
-  }
 
   @override
   void initState() {
@@ -54,6 +46,7 @@ class _WhatsAppHomeState extends State<WhatsAppHome>
     double orjWidth = MediaQuery.of(context).size.width;
     double cameraWidth = orjWidth / 24;
     double yourWidth = (orjWidth - cameraWidth) / 5;
+    final states = Provider.of<AppStates>(context);
     return Scaffold(
       appBar: AppBar(
         title: Text("WhatsApp"),
@@ -113,8 +106,22 @@ class _WhatsAppHomeState extends State<WhatsAppHome>
                     },
                     child: Text("Settings")),
               ),
+              PopupMenuItem(
+                child: GestureDetector(
+                    onTap: () {
+                      bool isDark = states.theme == ThemeType.DARK;
+                      if (isDark) {
+                        states.setTheme(ThemeType.LIGHT);
+                      } else {
+                        states.setTheme(ThemeType.DARK);
+                      }
+                      Navigator.of(context).pop();
+                    },
+                    child: Text(states.theme == ThemeType.DARK
+                        ? "Change Light"
+                        : "Change Dark")),
+              ),
             ],
-            // onSelected: (){},
           ),
         ],
       ),

@@ -3,7 +3,6 @@ class CallModel {
   final String name;
   final String date;
   final String time;
-  // final String icons;
 
   CallModel({this.img, this.name, this.date, this.time});
 }

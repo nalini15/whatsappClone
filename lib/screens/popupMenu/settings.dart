@@ -1,25 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import 'package:wclone/provider/appState.dart';
-import '../styles/colors.dart';
+import 'package:wclone/styles/colors.dart';
 
 class Settings extends StatefulWidget {
   @override
   _SettingsState createState() => _SettingsState();
 }
 
-// Future<void> getSelectedValue() async {
-//   SharedPreferences prefs = await SharedPreferences.getInstance();
-//   int radioValue = prefs.getInt('radio.value');
-
-// }
-
-enum Themes { light, dark }
-
 class _SettingsState extends State<Settings> {
-  ValueNotifier<Themes> _selectedItem = new ValueNotifier<Themes>(Themes.light);
   int _crtIndex = -1;
   @override
   Widget build(BuildContext context) {
@@ -59,7 +49,6 @@ class _SettingsState extends State<Settings> {
               onTap: () {
                 showDialog(
                     context: context,
-                    //barrierDismissible: false,
                     builder: (BuildContext context) {
                       return AlertDialog(
                           title: Text('Themes'), content: showAlertDialog());
@@ -107,15 +96,10 @@ class _SettingsState extends State<Settings> {
                           value ? ThemeType.DARK : ThemeType.LIGHT;
                       Navigator.of(context).pop();
                     },
-                    // onChanged: (newValue) =>
-                    //     setState(() => _crtIndex = newValue),
                   ),
                   _myRadioButton(
                     title: "Dark",
                     value: 1,
-                    // onChanged: (newValue) =>
-                    //     setState(() => _crtIndex = newValue),
-
                     onChanged: (value) {
                       Provider.of<AppStates>(context, listen: false).theme =
                           value ? ThemeType.DARK : ThemeType.LIGHT;
@@ -124,19 +108,6 @@ class _SettingsState extends State<Settings> {
                   ),
                 ],
               )
-              // FlatButton(
-              //     child: Text('Dark'),
-              //     onPressed: () async {
-              //       SharedPreferences prefs =
-              //           await SharedPreferences.getInstance();
-
-              //       // Navigator.of(context).pop();
-              //     }),
-              // FlatButton(
-              //     child: Text('Light'),
-              //     onPressed: () {
-              //       Navigator.of(context).pop();
-              //     })
             ])
       ],
     );

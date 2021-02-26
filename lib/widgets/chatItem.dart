@@ -42,7 +42,6 @@ class ChatItemWidget extends StatelessWidget {
                                       .name
                                       .substring(query.length),
                                   style: TextStyle(
-                                      //  color: Color(Utils.primaryTextColor()),
                                       fontWeight: FontWeight.w400,
                                       fontSize: 16.0))
                             ]),
@@ -50,16 +49,11 @@ class ChatItemWidget extends StatelessWidget {
                     : Text(
                         chatModelList[index].name,
                         style: TextStyle(
-                            // color: Color(Utils.primaryTextColor()),
-                            fontWeight: FontWeight.w500,
-                            fontSize: 16.0),
+                            fontWeight: FontWeight.w500, fontSize: 16.0),
                       ),
                 Text(
                   chatModelList[index].time,
-                  style: TextStyle(
-                      //  color: Color(Utils.secondaryTextColor()),
-                      fontWeight: FontWeight.w400,
-                      fontSize: 14.0),
+                  style: TextStyle(fontWeight: FontWeight.w400, fontSize: 14.0),
                 )
               ],
             ),
@@ -67,10 +61,7 @@ class ChatItemWidget extends StatelessWidget {
               padding: const EdgeInsets.only(top: 5),
               child: Text(
                 chatModelList[index].message,
-                style: TextStyle(
-                    //  color: Color(Utils.secondaryTextColor()),
-                    fontWeight: FontWeight.w400,
-                    fontSize: 14.0),
+                style: TextStyle(fontWeight: FontWeight.w400, fontSize: 14.0),
               ),
             ),
           )

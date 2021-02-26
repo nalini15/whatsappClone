@@ -7,12 +7,10 @@ class StatusScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      //  color: Theme.of(context).primaryColor,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Card(
-            // color: Theme.of(context).primaryColor,
             child: ListTile(
               leading: Stack(
                 children: [
