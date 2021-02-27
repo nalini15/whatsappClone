@@ -9,21 +9,21 @@ class StatusModel {
 List<StatusModel> dummyData = [
   StatusModel(
       img: 'https://data.whicdn.com/images/322027365/original.jpg?t=1541703413',
-      name: 'Nalini',
+      name: 'Nalini Waghole',
       time: '10:30  minutes ago'),
   StatusModel(
       img:
           'https://png.pngtree.com/png-clipart/20190520/original/pngtree-vector-users-icon-png-image_4144740.jpg',
-      name: 'Nalini',
+      name: 'Nalini Waghole',
       time: '10:30  minutes ago'),
   StatusModel(
       img:
           'https://png.pngtree.com/png-clipart/20190520/original/pngtree-vector-users-icon-png-image_4144740.jpg',
-      name: 'Nalini',
+      name: 'Nalini Waghole',
       time: '10:30  minutes ago'),
   StatusModel(
       img:
           'https://png.pngtree.com/png-clipart/20190520/original/pngtree-vector-users-icon-png-image_4144740.jpg',
-      name: 'Nalini',
+      name: 'Nalini Waghole',
       time: '10:30  minutes ago'),
 ];

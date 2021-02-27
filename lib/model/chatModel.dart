@@ -15,19 +15,19 @@ List<ChatModel> dummyData = [
       img:
           "https://png.pngtree.com/png-clipart/20190520/original/pngtree-vector-users-icon-png-image_4144740.jpg"),
   new ChatModel(
-      name: "Harvey Spectre",
-      message: "Hey I have hacked whatsapp!",
+      name: "Barry Allen",
+      message: "Hey!",
       time: "17:30",
       img:
           "https://png.pngtree.com/png-clipart/20190520/original/pngtree-vector-users-icon-png-image_4144740.jpg"),
   new ChatModel(
-      name: "Mike Ross",
+      name: "Rachel",
       message: "Wassup !",
       time: "5:00",
       img:
           "https://png.pngtree.com/png-clipart/20190520/original/pngtree-vector-users-icon-png-image_4144740.jpg"),
   new ChatModel(
-      name: "Rachel",
+      name: "Nalini ",
       message: "I'm good!",
       time: "10:30",
       img:

@@ -20,7 +20,7 @@ class ChatItemWidget extends StatelessWidget {
             leading: CircleAvatar(
               radius: 20.0,
               foregroundColor: Theme.of(context).primaryColor,
-              backgroundColor: Colors.grey,
+              backgroundColor: Theme.of(context).primaryColor,
               backgroundImage: NetworkImage(chatModelList[index].img),
             ),
             title: Row(
